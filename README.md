@@ -55,6 +55,15 @@ Audit log + before/after report
 - Batch processing with monitoring and audit logs.
 - Practical business impact: cost avoidance, risk control, and measurable storage reduction.
 
+
+## Sanitised code sample
+
+A production-safe source release is not possible because the original scripts touched live tenant data. This repo includes a sanitised example showing the implementation pattern without organisation identifiers or secrets:
+
+```text
+scripts/sanitised-storage-report-example.ps1
+```
+
 ## License
 
 Apache License 2.0. See [`LICENSE`](LICENSE).
