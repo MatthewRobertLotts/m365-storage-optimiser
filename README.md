@@ -56,6 +56,10 @@ Audit log + before/after report
 - Practical business impact: cost avoidance, risk control, and measurable storage reduction.
 
 
+## Auth note
+
+The live demo now separates interactive/delegated PnP setup from unattended app-only certificate automation. The production workflow used the certificate/app-only pattern; tenant identifiers and production scripts remain withheld.
+
 ## Sanitised code sample
 
 A production-safe source release is not possible because the original scripts touched live tenant data. This repo includes a sanitised example showing the implementation pattern without organisation identifiers or secrets:

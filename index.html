@@ -143,7 +143,7 @@
 <!-- ==================== DASHBOARD ==================== -->
 <div id="panel-dashboard" class="panel active">
   <h2>Project Overview</h2>
-  <div class="desc">The complete SharePoint version history automation project — from conception to deployment.</div>
+  <div class="desc">Sanitised reconstruction of the SharePoint version history automation project — from conception to deployment.</div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0;">
     <div style="background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:16px;">
@@ -260,7 +260,7 @@
 <!-- ==================== SETUP ==================== -->
 <div id="panel-setup" class="panel">
   <h2>Entra ID + Certificate Auth Setup</h2>
-  <div class="desc">As of September 2024, Microsoft requires Entra ID app registration for automated PowerShell scripts. This guide covers the full setup.</div>
+  <div class="desc">PnP PowerShell now requires your own Entra ID app registration for modern automation. This guide separates delegated/interactive setup from the unattended certificate pattern used by this portfolio reconstruction.</div>
 
   <div class="step">
     <div class="step-num">1</div>
@@ -274,7 +274,7 @@
     <div class="step-num">2</div>
     <div class="step-content">
       <h4>Configure API Permissions</h4>
-      <p>Go to API permissions → Add permission → Microsoft APIs → SharePoint → Delegated permissions. Select AllSites.Read (or FullControl for trim operations). Add permissions. Then click Grant admin consent for the organisation.</p>
+      <p>For interactive PnP use, add SharePoint Delegated permissions such as AllSites.Read. For unattended certificate/app-only automation, use SharePoint Application permissions such as Sites.Read.All or Sites.FullControl.All, then grant admin consent. Choose the least privilege that covers the operation.</p>
     </div>
   </div>
 
@@ -284,7 +284,7 @@
       <h4>Generate Self-Signed Certificate</h4>
       <p>In PowerShell as Administrator:</p>
       <div class="code">$CertificateName = "M365 Storage Optimiser"
-$CertificatePassword = "YourPassword"
+$CertificatePassword = "<certificate-password>"
 $DocumentsFolder = [Environment]::GetFolderPath("MyDocuments")
 $Certificate = New-SelfSignedCertificate -Subject $CertificateName `
   -CertStoreLocation "Cert:\CurrentUser\My" -KeyExportPolicy Exportable `
@@ -334,7 +334,7 @@ Connect-SPOService -Url "https://tenant-admin.sharepoint.com"</div>
     </div>
   </div>
 
-  <div class="log"><div class="ok">✓ This is the exact setup used in the production 32TB storage reduction project</div></div>
+  <div class="log"><div class="ok">✓ Sanitised reconstruction of the certificate/app-only setup pattern used in the production 32TB storage reduction project</div></div>
 </div>
 
 <!-- ==================== DOCS ==================== -->
